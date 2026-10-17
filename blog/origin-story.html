@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I've Been Living Someone Else's Plan — Robert Foley</title>
+  <meta name="description" content="I sat down with a spreadsheet and asked: if my job disappeared tomorrow, what would I actually have? $1,964 a month.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav>
+  <div class="container" style="max-width:1100px">
+    <div class="logo"><a href="../" style="color:inherit">robert<span>foley</span></a></div>
+    <div class="nav-links">
+      <a href="../#projects">Projects</a>
+      <a href="../#blog">Blog</a>
+      <a href="../#connect">Connect</a>
+    </div>
+  </div>
+</nav>
+
+<article class="blog-post">
+  <div class="container">
+    <a href="../#blog" class="back">← Back to blog</a>
+    <h1>I've Been Living Someone Else's Plan. Here's the Exit I'm Building.</h1>
+    <div class="meta">October 16, 2026 · Robert Foley</div>
+
+    <div class="content">
+
+      <p>There's a moment most people never let themselves have.</p>
+
+      <p>It's the moment you sit down with a spreadsheet, strip away every comfortable assumption, and ask: <em>If my job disappeared tomorrow, what would I actually have?</em></p>
+
+      <p>I had that moment. The number was <strong>$1,964 a month</strong>.</p>
+
+      <p>That's not a typo. That's 25% of what I bring home from a supply chain manufacturer in TX — the supply chain and EDI job I've had in Texas that pays the bills, funds the 401k, and keeps the lights on. The job I'm good at. The job that has nothing to do with what I want to build.</p>
+
+      <p>The $1,964 comes from dividends and a small sports picks subscription I run on Whop. It's real money. But it's not enough. Not by $6,000 a month.</p>
+
+      <p>That gap is what this whole thing is about.</p>
+
+      <hr>
+
+      <h2>The Comfortable Trap</h2>
+
+      <p>Here's how it works. You're good at something. A company pays you well for it. The salary goes up. The lifestyle adjusts. The savings grow — slowly, because the lifestyle grew too. And then one day you realize you haven't actually made a decision about your life in years. You've just been optimizing inside a plan someone else wrote.</p>
+
+      <p>That's not a complaint. the company pays me $7,800 a month. I'm not a victim of anything. I made choices that got me here, and I'm making choices to get me out.</p>
+
+      <p>But let's be honest about what that salary is: it's a monthly fee I pay to give someone else 40+ hours of my week. And the moment they decide the arrangement is over — layoff, restructuring, whatever — that $7,800 disappears, and I'm back to $1,964.</p>
+
+      <p>I sat with that number for a while.</p>
+
+      <hr>
+
+      <h2>What I Actually Have (Right Now, No Rounding Up)</h2>
+
+      <table>
+        <thead>
+          <tr><th>Income Source</th><th>Monthly</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>YieldMax + SVOL dividends (Fidelity)</td><td>~$1,037</td></tr>
+          <tr><td>Other dividend account</td><td>~$779</td></tr>
+          <tr><td>Sports picks Whop subscriptions</td><td>~$200</td></tr>
+          <tr><td><strong>Total without the day job</strong></td><td><strong>~$1,964</strong></td></tr>
+          <tr><td>Freedom target</td><td><strong>$8,000</strong></td></tr>
+          <tr><td style="color: var(--red)"><strong>Gap</strong></td><td style="color: var(--red)"><strong>-$6,036</strong></td></tr>
+        </tbody>
+      </table>
+
+      <p>The dividend income is real and growing. I'm DRIP reinvesting 92% of the YieldMax position. The compounding is slow but it's happening.</p>
+
+      <p>The sports picks sub is small — 54% win rate over 1,154 tracked picks, and $200/month in subscription revenue right now. That number needs to grow, and I know how to grow it: post the track record publicly, show the real numbers, and let people decide.</p>
+
+      <p>None of this is passive. All of it takes work. But the compound trajectory is real — I can model it, I can show the math, and I can see the exit.</p>
+
+      <hr>
+
+      <h2>What I Killed Along the Way</h2>
+
+      <p>This is where most "escape the 9-5" content goes silent.</p>
+
+      <p>I killed three bots in August 2026:</p>
+      <ul>
+        <li><strong>Crypto bot</strong> — negative P&L, no edge. Dead.</li>
+        <li><strong>Gemini AI trader</strong> — sunset. Not working the way I needed.</li>
+        <li><strong>PowerOptionsScan</strong> — built a working options scanner, couldn't find product-market fit. Too much maintenance for too little traction.</li>
+      </ul>
+
+      <p>Before that, my sports picks system ran <strong>34 days on frozen data</strong> because ESPN's API quietly started returning errors my bot wasn't catching. The picks kept going out. The win/loss tracking showed "0 anomalies." Everything looked fine. Nothing was fine.</p>
+
+      <p>I only caught it when I dug into the raw logs.</p>
+
+      <p>That's the real story of building on the side: most of it doesn't work the first time. Some of it doesn't work at all. You kill it and move on.</p>
+
+      <hr>
+
+      <h2>The Shift: Building a Fleet Instead of Bots</h2>
+
+      <p>Here's what changed recently.</p>
+
+      <p>I've been building individual automation systems for years — a bot here, a script there. Each one a single-point solution. When it breaks, I'm the one who notices and fixes it. That model doesn't scale when you're also doing a full-time job.</p>
+
+      <p>So I built something different. An agent fleet — a set of AI systems that work in parallel, share data, and each own a specific function:</p>
+
+      <ul>
+        <li><strong>🔭 Scout</strong> — finds new revenue opportunities, evaluates feasibility</li>
+        <li><strong>⚡ Hustle</strong> — executes on approved leads, manages the pipeline</li>
+        <li><strong>📊 Analyst</strong> — tracks performance across every revenue stream, catches silent failures</li>
+        <li><strong>✍️ Writer</strong> — creates content like this post</li>
+      </ul>
+
+      <p>The Writer agent drafted these words. I read them, changed what was wrong, and decided to post.</p>
+
+      <p>This isn't a flex. It's a workflow. I have a day job that runs 8+ hours a day. Every hour I get back from automation is an hour I can compound.</p>
+
+      <hr>
+
+      <h2>The Math, Plainly</h2>
+
+      <p>Target: <strong>$8,000/month net</strong> without the the company salary.</p>
+      <p>Current: <strong>$1,964/month</strong>.</p>
+      <p>Gap: <strong>$6,036/month</strong>.</p>
+
+      <p>The path isn't one big bet. It's four levers, pulled at the same time:</p>
+
+      <ol>
+        <li><strong>Grow Whop subs</strong> — scale the sports picks community. Each subscriber is $42/month. 25 new subscribers = +$1,050/month.</li>
+        <li><strong>Hit $100K trading</strong> — deploy surplus into YMAX positions. More dividend income, passively.</li>
+        <li><strong>DRIP compounding</strong> — already running. No action needed.</li>
+        <li><strong>FirstPass EDI consulting</strong> — I built an AI-powered EDI orchestration system at work. That's a sellable service. One audit engagement = $5,500. I need the first client.</li>
+      </ol>
+
+      <p>None of these are moonshots. All of them are already in motion.</p>
+
+      <hr>
+
+      <h2>Why Post Any of This?</h2>
+
+      <p>I'm not selling a course. I don't have a PDF to give you. I'm not going to tell you to "believe in your vision" or "take the leap."</p>
+
+      <p>I'm posting this because I spent years reading financial content that was either useless (inspirational, no numbers) or inaccessible (index fund advice when you can barely fund your 401k). The actual middle ground — real income numbers, real system breakdowns, real failures — almost doesn't exist in public.</p>
+
+      <p>So I'm going to make it exist.</p>
+
+      <p>Every month, I'll post what the systems actually did. What the picks hit. What the dividends paid. What died and what I replaced it with. The gap versus where it needs to be.</p>
+
+      <p>If you're building something similar — a side income, an automation stack, a path out of a job that's fine but isn't <em>it</em> — I want you to see that this is a real, trackable problem with real, trackable solutions.</p>
+
+      <p>It's not fast. It's not passive. But it's possible.</p>
+
+      <p>And I'm doing it in public so you can see exactly how.</p>
+
+      <p style="margin-top: 48px; color: var(--text-muted);">— Robert Foley · <a href="https://x.com/Stackemup80085">@Stackemup80085</a></p>
+
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="container">
+    <p>Robert Foley · Texas · Building the exit, one system at a time.</p>
+  </div>
+</footer>
+
+</body>
+</html>
