@@ -6,7 +6,7 @@ const base = import.meta.env.BASE_URL;
     <div class="section-label">Macro</div>
     <h2 class="section-title">Thesis Scoreboard</h2>
     <p class="section-desc">
-      Browser refresh checks six public feeds and repeats every 15 minutes while this page is visible; a manual refresh also tries the EIA Brent feed, which uses a shared rate-limited demo endpoint. Spot prices are indicative, and official daily series follow publisher release times. OAT–Bund and DXY remain dated published readings because their current sources block direct browser refresh. Signals and policy triggers are dated evidence snapshots, not a live news scan; unknown means unverified.
+      The board separates observations from hypotheses. Market readings refresh from public feeds where the browser can reach them; policy signals remain dated evidence states. The thesis layer is now organized around the Palindromic Dollar regime path rather than a single bullish/bearish score.
     </p>
 
     <div class="scoreboard-toolbar">
@@ -27,12 +27,41 @@ const base = import.meta.env.BASE_URL;
     </div>
 
     <p class="data-caveat">
-      Baseline values above are the supplied 28 Sep 2026 snapshot, not current quotes. Silver's baseline is a year-over-year change; refreshed silver is a spot quote. A failed or unavailable source leaves its last verified reading in place and marks it stale.
+      A failed or unavailable source leaves its last verified reading in place and marks it stale. Spot prices are indicative; official daily series follow publisher release schedules.
     </p>
 
-    <h3 class="subsection-title">Thesis ratings · supplied snapshot</h3>
-    <p class="section-desc compact-desc">These eight entries and their status/strength values come from the supplied 28 Sep 2026 code excerpt. Strength is not a probability. The excerpt is incomplete, so omitted theses are not inferred; refreshed market data does not rewrite these baseline judgments.</p>
-    <div class="thesis-grid" aria-label="Baseline thesis ratings">
+    <h3 class="subsection-title">Palindromic Dollar · regime engine</h3>
+    <p class="section-desc compact-desc">
+      Observed policy runs left to right into a coexistence pivot, then the right side represents conditional hard-asset and reserve-repricing stages. The registered path is <strong>r0 → r1 → r2 → r3 → r2↑ → r1↑ → r0↑</strong>. Baseline interpretation: <strong>r2 active · r3 forming</strong>.
+    </p>
+    <div class="thesis-grid" aria-label="Palindromic Dollar regime path">
+      <article class="thesis-card"><h4>r0 · Legacy</h4><span class="thesis-status">Legacy Treasury–Dollar</span><strong>Starting architecture</strong></article>
+      <article class="thesis-card"><h4>r1 · Rails</h4><span class="thesis-status">Tokenization / Digital Rails</span><strong>Policy infrastructure</strong></article>
+      <article class="thesis-card"><h4>r2 · Treasury demand</h4><span class="thesis-status winning">ACTIVE · baseline</span><strong>Stablecoins → Treasury Demand</strong></article>
+      <article class="thesis-card"><h4>r3 · Pivot</h4><span class="thesis-status contested">FORMING · baseline</span><strong id="regime-r3">Evidence floor: —</strong><p class="signal-method">45% r2 evidence + 30% GENIUS final rules + 25% GENIUS effective.</p></article>
+      <article class="thesis-card"><h4>r2↑ · Reserves</h4><span class="thesis-status">Sovereign Reserve Diversification</span><strong id="regime-r2u">Evidence floor: —</strong><p class="signal-method">35% BTC reserve + 30% budget-neutral BTC + 20% recap advance + 15% hard-asset rotation.</p></article>
+      <article class="thesis-card"><h4>r1↑ · Repricing</h4><span class="thesis-status">Reserve Modernization / Balance-Sheet Repricing</span><strong id="regime-r1u">Evidence floor: —</strong><p class="signal-method">30% H.R.8957 + 35% gold revaluation + 20% r2↑ + 15% recap advance.</p></article>
+      <article class="thesis-card"><h4>r0↑ · Reconstructed</h4><span class="thesis-status">Reconstructed Digital-Dollar Architecture</span><strong id="regime-r0u">Evidence floor: —</strong><p class="signal-method">65% hard-asset backing + 20% r1↑ + 15% strong-form de-dollarization.</p></article>
+    </div>
+    <p class="data-caveat" id="regime-caveat">Unknown policy states contribute nothing to the displayed evidence floor; they are not treated as false. Trigger-state values are LIVE 1.00, SCHEDULED .72, RULEMAKING .58, DIRECTED .48, PROPOSED .28, WATCH .12, ABSENT 0.</p>
+
+    <h3 class="subsection-title">Scenario weights · deterministic baseline</h3>
+    <p class="section-desc compact-desc">
+      Scenario weights start from the registered 38 / 27 / 22 / 13 baseline on every refresh. They are evidentiary weights, not calibrated probabilities. Weight changes are zero-sum and idempotent: the page recomputes from the baseline and current signals rather than compounding prior runs.
+    </p>
+    <div class="thesis-grid" aria-label="Scenario weights">
+      <article class="thesis-card"><h4>Base · orderly</h4><strong id="weight-base">38%</strong></article>
+      <article class="thesis-card"><h4>De-dollarization</h4><strong id="weight-dedollar">27%</strong></article>
+      <article class="thesis-card"><h4>Milkshake</h4><strong id="weight-milkshake">22%</strong></article>
+      <article class="thesis-card"><h4>Recap</h4><strong id="weight-recap">13%</strong></article>
+    </div>
+    <div class="weight-note" id="weight-note">
+      <strong>Registered shift currently encoded:</strong> OAT–Bund &gt; 90bp moves 2 points from Base to Milkshake. Other signal deltas stay unchanged until their exact transfer rules are supplied; the page does not invent them.
+    </div>
+
+    <h3 class="subsection-title">Thesis evidence inputs</h3>
+    <p class="section-desc compact-desc">These supplied snapshot strengths are evidence inputs, not probabilities. The regime engine uses the stablecoin → T-bill and hard-asset-rotation strengths as frozen evidence inputs until a newer reviewed snapshot replaces them.</p>
+    <div class="thesis-grid" aria-label="Baseline thesis evidence">
       <article class="thesis-card"><h4>Long sovereign paper = designated loser</h4><span class="thesis-status winning">WINNING · snapshot</span><strong>95 / 100</strong></article>
       <article class="thesis-card"><h4>Hard-asset rotation</h4><span class="thesis-status winning">WINNING · snapshot</span><strong>90 / 100</strong></article>
       <article class="thesis-card"><h4>Stablecoin → T-bill channel</h4><span class="thesis-status winning">WINNING · snapshot</span><strong>92 / 100</strong></article>
@@ -54,12 +83,8 @@ const base = import.meta.env.BASE_URL;
       <article class="signal-card"><h4>Recapitalization-policy advance</h4><p id="rule-recap" class="signal-state">Unknown · not verified by the supplied excerpt</p></article>
     </div>
 
-    <div class="weight-note" id="weight-note">
-      <strong>Scenario weights are not being changed.</strong> The supplied code excerpt names the rules but does not include starting weights or the registered shift sizes. This board will not invent a scoring formula.
-    </div>
-
     <h3 class="subsection-title">Policy trigger states</h3>
-    <p class="section-desc compact-desc">States stay unverified until a current source is checked.</p>
+    <p class="section-desc compact-desc">States stay unverified until a current source is checked. Unknown is not equivalent to ABSENT.</p>
     <div class="trigger-grid" id="trigger-grid">
       <div class="trigger-card"><span>GENIUS final rules</span><strong>Unverified</strong></div>
       <div class="trigger-card"><span>GENIUS effective</span><strong>Unverified</strong></div>
@@ -77,3 +102,72 @@ const base = import.meta.env.BASE_URL;
   </div>
 </section>
 <script is:inline src={`${base}js/scoreboard.js`} defer></script>
+<script is:inline>
+  (() => {
+    const feedUrl = 'https://raw.githubusercontent.com/curburenthusiasm/personal-site/master/data/scoreboard.json';
+    const stateValues = { LIVE: 1, SCHEDULED: .72, RULEMAKING: .58, DIRECTED: .48, PROPOSED: .28, WATCH: .12, ABSENT: 0 };
+    const baseline = { base: 38, dedollar: 27, milkshake: 22, recap: 13 };
+
+    const pct = (value) => `${Math.round(value * 100)}%`;
+    const triggerValue = (trigger) => stateValues[String(trigger?.state || '').toUpperCase()] ?? 0;
+    const verifiedSignal = (feed, key) => {
+      const meta = feed?.signal_meta?.[key];
+      if (!meta || meta.status !== 'verified') return 0;
+      return feed?.signals?.[key] === true ? 1 : 0;
+    };
+
+    function renderEngine(feed) {
+      const triggers = Object.fromEntries((feed.triggers || []).map((item) => [item.id, item]));
+      const r2Score = .92;
+      const hardAssetRotation = .90;
+      const recapAdvance = verifiedSignal(feed, 'recap_policy_advance');
+      const dedollarStrong = verifiedSignal(feed, 'dedollar_official');
+
+      const r3 = r2Score * .45 + triggerValue(triggers.genius_final_rules) * .30 + triggerValue(triggers.genius_effective) * .25;
+      const r2u = triggerValue(triggers.btc_reserve) * .35 + triggerValue(triggers.btc_budget_neutral) * .30 + recapAdvance * .20 + hardAssetRotation * .15;
+      const r1u = triggerValue(triggers.hr8957) * .30 + triggerValue(triggers.gold_revaluation) * .35 + r2u * .20 + recapAdvance * .15;
+      const r0u = triggerValue(triggers.hard_asset_backing) * .65 + r1u * .20 + dedollarStrong * .15;
+
+      const scores = { 'regime-r3': r3, 'regime-r2u': r2u, 'regime-r1u': r1u, 'regime-r0u': r0u };
+      Object.entries(scores).forEach(([id, score]) => {
+        const node = document.getElementById(id);
+        if (node) node.textContent = `Evidence floor: ${pct(score)}`;
+      });
+
+      const weights = { ...baseline };
+      const oat = (feed.metrics || []).find((item) => item.k === 'oat');
+      const oatValue = Number(String(oat?.v || '').match(/-?\d+(?:\.\d+)?/)?.[0]);
+      const oatVerified = oat && ['verified', 'snapshot'].includes(oat.status) && Number.isFinite(oatValue);
+      if (oatVerified && oatValue > 90) {
+        weights.base -= 2;
+        weights.milkshake += 2;
+      }
+
+      const weightNodes = {
+        'weight-base': weights.base,
+        'weight-dedollar': weights.dedollar,
+        'weight-milkshake': weights.milkshake,
+        'weight-recap': weights.recap
+      };
+      Object.entries(weightNodes).forEach(([id, value]) => {
+        const node = document.getElementById(id);
+        if (node) node.textContent = `${value}%`;
+      });
+
+      const note = document.getElementById('weight-note');
+      if (note) {
+        note.innerHTML = oatVerified && oatValue > 90
+          ? '<strong>Registered shift fired:</strong> OAT–Bund > 90bp transfers 2 points Base → Milkshake. Weights were recomputed from 38 / 27 / 22 / 13; no unregistered deltas were applied.'
+          : '<strong>No registered scenario shift fired from verified data.</strong> Weights remain at the 38 / 27 / 22 / 13 baseline; no unregistered deltas were applied.';
+      }
+    }
+
+    fetch(`${feedUrl}?engine=${Date.now()}`, { cache: 'no-store' })
+      .then((response) => response.ok ? response.json() : Promise.reject(new Error(`HTTP ${response.status}`)))
+      .then(renderEngine)
+      .catch(() => {
+        const caveat = document.getElementById('regime-caveat');
+        if (caveat) caveat.textContent += ' Regime scores could not refresh from the saved JSON snapshot on this load.';
+      });
+  })();
+</script>
