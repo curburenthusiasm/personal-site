@@ -11,7 +11,7 @@ const { execFileSync } = require('node:child_process');
 const SITE_ROOT = path.resolve(process.env.PERSONAL_SITE_REPO || path.join(__dirname, '..'));
 const FEED_RELATIVE_PATH = 'data/sports-picks.json';
 const FEED_PATH = path.join(SITE_ROOT, FEED_RELATIVE_PATH);
-const SPORTS = new Set(['MLB', 'NFL', 'NCAAF']);
+const SPORTS = new Set(['NBA', 'NHL', 'NFL', 'NCAAF', 'MLB']);
 
 function git(args, options = {}) {
   return execFileSync('git', ['-C', SITE_ROOT, ...args], {
@@ -51,6 +51,8 @@ function candidatesFor(sport, picks) {
       ...sorted.filter((pick) => scorePercent(pick.confidence) >= 55 && scorePercent(pick.confidence) < 65).slice(0, 3)
     ];
   }
+  if (sport === 'NBA') return sorted.slice(0, 6);
+  if (sport === 'NHL') return sorted;
   return sorted.filter((pick) => scorePercent(pick.confidence) >= 72).slice(0, 3);
 }
 
@@ -62,7 +64,7 @@ function publicPick(sport, pick) {
   const line = cleanText(pick.line || pick.recommendedLine, 30);
   if (market && line && !market.toLowerCase().includes(line.toLowerCase())) market += ' ' + line;
   if (!market && line) market = 'Spread ' + line;
-  if (!market) market = sport === 'MLB' ? 'Moneyline' : 'Spread';
+  if (!market) market = sport === 'MLB' || sport === 'NHL' ? 'Moneyline' : 'Spread';
 
   const bestOdds = pick.bestOdds || {};
   const result = {

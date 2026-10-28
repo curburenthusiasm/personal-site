@@ -6,7 +6,7 @@
   const feedNode = document.getElementById('sports-picks-feed');
   const statusNode = document.getElementById('sports-picks-status');
   const refreshButton = document.getElementById('sports-picks-refresh');
-  const sportLabels = { MLB: 'MLB', NFL: 'NFL', NCAAF: 'College football' };
+  const sportLabels = { NBA: 'NBA', NHL: 'NHL', MLB: 'MLB', NFL: 'NFL', NCAAF: 'College football' };
 
   if (!feedNode || !statusNode || !refreshButton) return;
 

@@ -80,9 +80,21 @@
       const detail = metric.note ? ' · ' + metric.note : '';
       meta.textContent = state + ' · ' + shortDate(metric.observed_at) + detail;
     }
-    if (source && metric.source_url) {
-      source.href = metric.source_url;
+    if (source) {
+      const sourceUrl = safeSourceUrl(metric.source_url);
+      if (sourceUrl) source.href = sourceUrl;
+      else source.removeAttribute('href');
       source.textContent = (metric.source || 'Source') + ' ↗';
+    }
+  }
+
+  function safeSourceUrl(value) {
+    try {
+      const url = new URL(String(value || ''), window.location.origin);
+      if (url.protocol !== 'https:' || url.username || url.password) return null;
+      return url.href;
+    } catch (_) {
+      return null;
     }
   }
 
