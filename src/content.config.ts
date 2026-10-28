@@ -15,6 +15,7 @@ const projects = defineCollection({
     diagram: z.boolean(),
     order: z.number(),
     repoUrl: z.string().url().optional(),
+    liveUrl: z.string().url().optional(),
   }),
 });
 
