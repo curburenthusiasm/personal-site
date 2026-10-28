@@ -18,6 +18,7 @@
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
+      <a href="#picks">Picks</a>
       <a href="#research">Research</a>
       <a href="#macro">Macro</a>
       <a href="#blog">Notes</a>
@@ -73,17 +74,49 @@
 
       <article class="project-card">
         <div class="card-header">
-          <h3>X12 document validation</h3>
-          <span class="status building">Prototype</span>
+          <h3>X12 ASN validation capstone</h3>
+          <span class="status complete">Demo complete</span>
         </div>
-        <p class="desc">An experiment in checking advance-ship-notice documents against partner specifications before submission. The prototype includes structural checks and a human-review path; no customer or production result is claimed.</p>
+        <p class="desc">A four-agent prototype validates sample X12 856 advance-ship notices, diagnoses ambiguous failures, and escalates low-confidence cases. Five demo scenarios are documented. External EDI integrations are mocked; accuracy and production performance were not measured.</p>
         <div class="tags">
           <span class="tag">EDI</span>
           <span class="tag">X12</span>
-          <span class="tag">Validation</span>
+          <span class="tag">Capstone demo</span>
         </div>
       </article>
+
+      <article class="project-card">
+        <div class="card-header">
+          <h3>Sports-picks automation</h3>
+          <span class="status live">Active experiment</span>
+        </div>
+        <p class="desc">Scheduled pick-generation jobs publish selected free-channel outputs to the live feed below. The displayed score is the bot's own rating, not a calibrated probability or a performance claim.</p>
+        <div class="tags">
+          <span class="tag">Automation</span>
+          <span class="tag">Model output</span>
+          <span class="tag">Live feed</span>
+        </div>
+        <a href="#picks" class="card-link">View latest published picks ↓</a>
+      </article>
     </div>
+  </div>
+</section>
+
+<section id="picks">
+  <div class="wide-container">
+    <div class="section-label">Live output</div>
+    <h2 class="section-title">Sports picks</h2>
+    <p class="section-desc">
+      This page checks for new public picks every minute and after a manual refresh. A feed changes only after the matching free-channel Discord post succeeds. It shows selections, markets, bot-reported scores, and available odds; bankrolls, stakes, private-channel picks, and performance claims are not published.
+    </p>
+    <div class="scoreboard-toolbar">
+      <button id="sports-picks-refresh" class="refresh-button" type="button">Check for new picks</button>
+      <p id="sports-picks-status" class="scoreboard-status" role="status" aria-live="polite">Loading the latest published pick feed…</p>
+    </div>
+    <div id="sports-picks-feed" class="sports-feed" aria-live="polite">
+      <p class="feed-empty">No pick output has been published yet.</p>
+    </div>
+    <p class="data-caveat">Picks are experimental model outputs, not guarantees or independently verified probabilities. Published time is shown so older slates are not mistaken for current recommendations.</p>
   </div>
 </section>
 
@@ -224,5 +257,6 @@
   </div>
 </footer>
 <script src="js/scoreboard.js" defer></script>
+<script src="js/sports-picks.js" defer></script>
 </body>
 </html>
