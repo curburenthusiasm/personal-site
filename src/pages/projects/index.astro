@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+
+const base = import.meta.env.BASE_URL;
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+const tags = [...new Set(projects.flatMap((project) => project.data.tags))].sort();
+---
+<SiteLayout title="Projects" description="Case studies in agentic automation, EDI, data governance, security, infrastructure, and research.">
+  <div class="wide-container">
+    <header class="page-title">
+      <p class="section-kicker">ST*10 · Portfolio</p>
+      <h1>Projects</h1>
+      <p>Case studies describe the problem, constraints, design, status, and lessons. Employer and customer details are generalized or omitted.</p>
+    </header>
+    <div class="filters" aria-label="Filter projects by tag">
+      <button class="filter-button" type="button" data-filter="all" aria-pressed="true">All</button>
+      {tags.map((tag) => <button class="filter-button" type="button" data-filter={tag} aria-pressed="false">{tag}</button>)}
+    </div>
+    <div class="card-grid" id="project-grid">
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </div>
+  <script is:inline>
+    (() => {
+      const buttons = [...document.querySelectorAll('[data-filter]')];
+      const cards = [...document.querySelectorAll('[data-project-card]')];
+      buttons.forEach((button) => button.addEventListener('click', () => {
+        const filter = button.dataset.filter;
+        buttons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+        cards.forEach((card) => { card.hidden = filter !== 'all' && !card.dataset.tags.split(' ').includes(filter); });
+      }));
+    })();
+  </script>
+</SiteLayout>

@@ -1,0 +1,9 @@
+---
+const { note } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+<a class="note-card" href={`${base}notes/${note.data.slug}/`}>
+  <span class="date-line">{note.data.category} · {note.data.pubDate.toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' })}</span>
+  <h3>{note.data.title}</h3>
+  <p>{note.data.description}</p>
+</a>
