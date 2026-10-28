@@ -10,13 +10,13 @@ const featured = projects.filter((project) => project.data.featured).slice(0, 3)
 const notes = (await getCollection('notes', ({ data }) => !data.draft))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 3);
 ---
-<SiteLayout title="Engineering portfolio" description="An anonymous engineering notebook about reliable automation, evidence, and public research status.">
+<SiteLayout title="Engineering portfolio" description="A portfolio of automation, ERP/EDI integration, data engineering, agentic systems, infrastructure, and applied research.">
   <section class="hero">
     <div class="wide-container hero-grid">
       <div>
-        <p class="eyebrow">Engineering notebook · Systems · Evidence</p>
-        <h1>I build systems that make messy operational data <em>trustworthy.</em></h1>
-        <p class="hero-subtitle">Agentic automation, EDI pipelines, governed data, and tamper-evident records—designed around falsifiable outcomes and honest status.</p>
+        <p class="eyebrow">Engineering notebook · Automation · Systems · Evidence</p>
+        <h1>I build systems that make complex operations <em>work together.</em></h1>
+        <p class="hero-subtitle">ERP and EDI integration, SQL automation, manufacturing intelligence, agentic workflows, and applied research—built around observable state, repeatable execution, and honest status.</p>
         <div class="link-row">
           <a class="text-link" href={`${base}projects/`}>Explore projects ↓</a>
           <a class="text-link" href={`${base}notes/`}>Read field notes →</a>
@@ -24,7 +24,7 @@ const notes = (await getCollection('notes', ({ data }) => !data.draft))
       </div>
       <aside class="hero-aside">
         <p><strong>Operating principles</strong></p>
-        <p>Truth over output. Failure-first design. Judgment becomes rules. Separate research from production and read from write.</p>
+        <p>Automate the repetitive. Make state visible. Design for safe reruns. Turn judgment into rules. Separate production claims from experiments.</p>
       </aside>
     </div>
   </section>
@@ -35,7 +35,7 @@ const notes = (await getCollection('notes', ({ data }) => !data.draft))
         <div>
           <p class="section-kicker">ST*01 · Selected work</p>
           <h2 class="section-heading" id="featured-title">Systems with a checkable story</h2>
-          <p class="section-desc">Project status distinguishes production work, prototypes, research, concepts, and active investigations. Reported outcomes are not confused with targets or plans.</p>
+          <p class="section-desc">The portfolio spans production automation, operational data, AI agents, products, and research. Each case study labels what is production, prototype, research, concept, or still in progress.</p>
         </div>
         <a class="text-link" href={`${base}projects/`}>All projects →</a>
       </div>
@@ -50,11 +50,11 @@ const notes = (await getCollection('notes', ({ data }) => !data.draft))
       <p class="section-kicker">ST*02 · Design themes</p>
       <h2 class="section-heading">The recurring questions</h2>
       <ul class="feature-list">
-        <li><strong>Truth over output</strong>Produce a verifiable record, not merely a result.</li>
-        <li><strong>Failure first</strong>Enumerate failure modes, then derive countermeasures.</li>
-        <li><strong>Judgment → rules</strong>Turn one-off orchestration decisions into deterministic worker rules.</li>
-        <li><strong>Blast radius</strong>Separate research from production and require approval for consequential writes.</li>
-        <li><strong>SQL decides</strong>Keep business logic in governed data; let the app display it.</li>
+        <li><strong>Can this be automated?</strong>Remove repetitive handoffs while keeping exceptions visible.</li>
+        <li><strong>Can it be rerun safely?</strong>Use idempotency, explicit state, and bounded writes.</li>
+        <li><strong>Can the result be explained?</strong>Prefer auditable data paths over opaque convenience.</li>
+        <li><strong>Where is the blast radius?</strong>Separate read, recommendation, approval, and execution.</li>
+        <li><strong>What did we actually prove?</strong>Keep research targets, prototypes, and production outcomes distinct.</li>
       </ul>
     </div>
   </section>
@@ -65,7 +65,7 @@ const notes = (await getCollection('notes', ({ data }) => !data.draft))
         <div>
           <p class="section-kicker">ST*03 · Public instruments</p>
           <h2 class="section-heading">Live output, with its limits attached</h2>
-          <p class="section-desc">Two refreshable pages publish source-linked macro readings and selected sports-pick outputs. Feed values are kept distinct from interpretation or performance claims.</p>
+          <p class="section-desc">Refreshable pages publish source-linked macro readings and selected sports-pick outputs. Feed values remain distinct from interpretation or performance claims.</p>
         </div>
         <div class="link-row">
           <a class="text-link" href={`${base}macro/`}>Macro scoreboard →</a>
@@ -81,7 +81,7 @@ const notes = (await getCollection('notes', ({ data }) => !data.draft))
         <div>
           <p class="section-kicker">ST*04 · Latest notes</p>
           <h2 class="section-heading">Recent writing</h2>
-          <p class="section-desc">Only reviewed notes appear here and in the RSS feed. Drafts are excluded from public listings.</p>
+          <p class="section-desc">Reviewed notes appear here and in the RSS feed. Drafts stay private until they are ready to stand on their own.</p>
         </div>
         <a class="text-link" href={`${base}notes/`}>All notes →</a>
       </div>

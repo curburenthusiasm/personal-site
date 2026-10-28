@@ -3,16 +3,15 @@ import { getCollection } from 'astro:content';
 import SiteLayout from '../../layouts/SiteLayout.astro';
 import ProjectCard from '../../components/ProjectCard.astro';
 
-const base = import.meta.env.BASE_URL;
 const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
 const tags = [...new Set(projects.flatMap((project) => project.data.tags))].sort();
 ---
-<SiteLayout title="Projects" description="Case studies in agentic automation, EDI, data governance, security, infrastructure, and research.">
+<SiteLayout title="Projects" description="Case studies in enterprise automation, ERP/EDI, operational data, agentic systems, infrastructure, products, quantitative tooling, and applied research.">
   <div class="wide-container">
     <header class="page-title">
       <p class="section-kicker">ST*10 · Portfolio</p>
       <h1>Projects</h1>
-      <p>Case studies describe the problem, constraints, design, status, and lessons. Employer and customer details are generalized or omitted.</p>
+      <p>Production systems, prototypes, products, and research. Each case study states its status and focuses on the problem, constraints, architecture, results, and lessons without exposing private operational details.</p>
     </header>
     <div class="filters" aria-label="Filter projects by tag">
       <button class="filter-button" type="button" data-filter="all" aria-pressed="true">All</button>
