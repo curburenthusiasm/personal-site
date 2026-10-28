@@ -3,59 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Automation Is Not Evidence — Robert Foley</title>
-  <meta name="description" content="A practical argument for separating completed jobs from verified outcomes, and for keeping human approval at meaningful boundaries.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <title>Automation Is Not Evidence — Field Notes</title>
+  <meta name="description" content="A practical argument for separating completed jobs from verified outcomes and keeping human approval at meaningful boundaries.">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-<nav>
-  <div class="container" style="max-width:1100px">
-    <div class="logo"><a href="../" style="color:inherit">robert<span>foley</span></a></div>
+<nav aria-label="Main navigation">
+  <div class="container nav-container">
+    <a class="logo" href="../" aria-label="Field Notes home">field<span>notes</span></a>
     <div class="nav-links">
-      <a href="../#about">Bio</a>
-      <a href="../#projects">Work</a>
-      <a href="../#research">Research</a>
-      <a href="../#blog">Blog</a>
+      <a href="../#projects">Projects</a><a href="../#research">Research</a>
+      <a href="../#macro">Macro</a><a href="../#blog">Notes</a>
     </div>
   </div>
 </nav>
 <article class="blog-post">
   <div class="container">
-    <a href="../#blog" class="back">← Back to writing</a>
+    <a href="../#blog" class="back">← Back to notes</a>
     <h1>Automation Is Not Evidence</h1>
-    <div class="meta">October 27, 2026 · Robert Foley · Essay</div>
+    <div class="meta">October 27, 2026 · Essay</div>
     <div class="content">
-      <p>A job can finish. A dashboard can stay green. A report can say “zero anomalies.” None of those statements, by itself, proves that the underlying data was fresh or that the result was correct.</p>
-
-      <p>I learned that the hard way: one of my sports-picks pipelines kept running against frozen data for 34 days before I found the break in the input path. The automation was active. The feedback loop was not.</p>
-
+      <p>A job can finish. A dashboard can stay green. A report can say “zero anomalies.” None of those statements, by itself, proves that the input was fresh or that the result was correct.</p>
       <h2>Execution and outcome are different facts</h2>
       <p>“The scheduled task ran” is evidence about execution. “The input was current” is a separate claim. “The result was correct” is another. When those get collapsed into one green check, a quiet failure can look like success.</p>
-
-      <p>The same distinction matters in research. A test vector reproduced is not a challenge solved. A runner and protocol are not completed metrics. A target written down is not a result achieved.</p>
-
-      <h2>Make the status legible</h2>
-      <p>For any system I depend on, I want to know when it last received valid input, what it processed, what it produced, and whether anyone checked the output. If data is stale or a required step fails, the system should say so clearly instead of manufacturing a reassuring “all clear.”</p>
-
-      <p>I also try to label work honestly:</p>
+      <p>The same distinction matters in research. Reproducing a test vector is not solving a challenge. A runner and protocol are not completed metrics. A target written down is not an achieved result.</p>
+      <h2>Make status legible</h2>
+      <p>Systems should make it possible to see when they last received valid input, what they processed, what they produced, and whether the output was checked. If a required step fails, the system should say so instead of manufacturing a reassuring “all clear.”</p>
       <ul>
         <li><strong>Planned:</strong> intended, but not yet run.</li>
-        <li><strong>Probed:</strong> a limited experiment or test vector; not a full validation.</li>
-        <li><strong>Reported:</strong> an observed result with a stated scope and time window.</li>
-        <li><strong>Verified:</strong> another person or repeatable check can confirm the evidence.</li>
+        <li><strong>Probed:</strong> a limited experiment or test; not a full validation.</li>
+        <li><strong>Reported:</strong> an observed result with stated scope and time window.</li>
+        <li><strong>Verified:</strong> another person or a repeatable check can confirm the evidence.</li>
       </ul>
-
       <h2>Autonomy needs boundaries</h2>
-      <p>Automation is useful when it removes repetitive work and makes the remaining decisions clearer. It should not quietly turn uncertainty into authority. I want consequential external actions to have an explicit approval boundary, and I want a record of what happened after an action—not just a record that a model or script was invoked.</p>
-
-      <p>More agents do not automatically mean less work. If nobody can tell what ran, what it relied on, and what changed, the system has added another thing to supervise. Reliability is earned by observable inputs, honest failure states, and outcomes that can be checked.</p>
-
-      <p>That is the standard I am trying to build toward: not “the automation ran,” but “here is what it used, here is what happened, and here is how we know.”</p>
+      <p>Automation is useful when it removes repetitive work and makes decisions clearer. It should not turn uncertainty into authority. Consequential external actions need an approval boundary, and the outcome should be checked—not just the fact that a model or script was invoked.</p>
+      <p>More agents do not automatically mean less work. Reliability comes from observable inputs, honest failure states, and outcomes that can be checked.</p>
     </div>
   </div>
 </article>
-<footer><div class="container"><p>Robert Foley · Building and testing useful systems.</p></div></footer>
+<footer><div class="container"><p>Pseudonymous project notes · Claims are labeled by evidence and date.</p></div></footer>
 </body>
 </html>

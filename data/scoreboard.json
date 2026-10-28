@@ -1,0 +1,217 @@
+{
+  "as_of": "2026-10-27",
+  "refreshed_at": "2026-10-28T02:12:27Z",
+  "metrics": [
+    {
+      "k": "debt",
+      "label": "US total debt",
+      "v": "$40.53T",
+      "source": "US Treasury Fiscal Data",
+      "source_url": "https://fiscaldata.treasury.gov/datasets/debt-to-the-penny/",
+      "observed_at": "2026-10-26",
+      "status": "verified"
+    },
+    {
+      "k": "us10y",
+      "label": "10Y Treasury yield",
+      "v": "4.99%",
+      "source": "US Treasury Daily Par Yield Curve",
+      "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates",
+      "observed_at": "2026-10-27",
+      "status": "verified"
+    },
+    {
+      "k": "oat",
+      "label": "OAT–Bund spread",
+      "v": "159.4bp",
+      "source": "Ideal-Investisseur (Banque de France / Bundesbank data)",
+      "source_url": "https://www.ideal-investisseur.fr/en/markets/oat-bund-spread.html",
+      "observed_at": "2026-10-27",
+      "status": "verified"
+    },
+    {
+      "k": "gold",
+      "label": "Gold",
+      "v": "$4,047.70/oz",
+      "source": "Gold-API spot quote",
+      "source_url": "https://api.gold-api.com/price/XAU",
+      "observed_at": "2026-10-27",
+      "status": "verified",
+      "note": "Spot quote; provider timestamp: 2026-10-28T02:12:25Z"
+    },
+    {
+      "k": "silver",
+      "label": "Silver spot",
+      "v": "$54.17/oz",
+      "source": "Gold-API spot quote",
+      "source_url": "https://api.gold-api.com/price/XAG",
+      "observed_at": "2026-10-27",
+      "status": "verified",
+      "note": "Spot quote; provider timestamp: 2026-10-28T02:12:25Z"
+    },
+    {
+      "k": "btc",
+      "label": "Bitcoin",
+      "v": "$80,886.38",
+      "source": "Coinbase spot quote",
+      "source_url": "https://api.coinbase.com/v2/prices/BTC-USD/spot",
+      "observed_at": "2026-10-28T02:12:26Z",
+      "status": "verified",
+      "note": "Spot quote retrieved at 2026-10-28T02:12:26Z"
+    },
+    {
+      "k": "stable",
+      "label": "USD-pegged stablecoins",
+      "v": "$303.3B",
+      "source": "DefiLlama stablecoin API",
+      "source_url": "https://stablecoins.llama.fi/stablecoins?includePrices=false",
+      "observed_at": "2026-10-27",
+      "status": "verified",
+      "note": "Sum of reported USD-pegged circulating supply."
+    },
+    {
+      "k": "brent",
+      "label": "Brent crude",
+      "v": "$115.22/bbl",
+      "source": "US Energy Information Administration",
+      "source_url": "https://www.eia.gov/dnav/pet/pet_pri_spt_s1_d.htm",
+      "observed_at": "2026-10-20",
+      "status": "verified",
+      "note": "Latest published daily spot observation; publication may lag."
+    },
+    {
+      "k": "dxy",
+      "label": "DXY futures proxy",
+      "v": "102.40",
+      "source": "Yahoo Finance DX-Y.NYB continuous contract",
+      "source_url": "https://finance.yahoo.com/quote/DX-Y.NYB/",
+      "observed_at": "2026-10-27",
+      "status": "verified",
+      "note": "Daily close/latest value for a continuous ICE dollar-index futures proxy, not the cash index."
+    }
+  ],
+  "signals": {
+    "oat_bund_bp": 159.4,
+    "gold_dxy_together": false,
+    "g7_auction_fail": null,
+    "dedollar_official": null,
+    "recap_policy_advance": null
+  },
+  "signal_meta": {
+    "oat_bund_bp": {
+      "status": "verified",
+      "source_url": "https://www.ideal-investisseur.fr/en/markets/oat-bund-spread.html"
+    },
+    "gold_dxy_together": {
+      "status": "verified",
+      "reference_date": "2026-10-13",
+      "confirmation_dates": [
+        "2026-10-23",
+        "2026-10-26",
+        "2026-10-27"
+      ],
+      "definition": "Both futures proxies closed above their values 10 aligned sessions earlier for 3 consecutive closes.",
+      "gold_proxy": "COMEX continuous gold futures (GC=F)",
+      "dxy_proxy": "ICE continuous dollar-index contract (DX-Y.NYB)",
+      "source_url": "https://finance.yahoo.com/quote/DX-Y.NYB/",
+      "source_urls": [
+        "https://finance.yahoo.com/quote/GC=F/",
+        "https://finance.yahoo.com/quote/DX-Y.NYB/"
+      ]
+    },
+    "g7_auction_fail": {
+      "status": "unknown",
+      "reason": "Requires verified auction evidence; no automatic source is configured."
+    },
+    "dedollar_official": {
+      "status": "unknown",
+      "reason": "Requires current WGC or TIC evidence; no automatic source is configured."
+    },
+    "recap_policy_advance": {
+      "status": "unknown",
+      "reason": "Requires current legislative or Treasury evidence; no automatic source is configured."
+    }
+  },
+  "triggers": [
+    {
+      "id": "genius_final_rules",
+      "state": "UNKNOWN"
+    },
+    {
+      "id": "genius_effective",
+      "state": "UNKNOWN"
+    },
+    {
+      "id": "issuer_approvals",
+      "state": "UNKNOWN"
+    },
+    {
+      "id": "btc_reserve",
+      "state": "UNKNOWN"
+    },
+    {
+      "id": "btc_budget_neutral",
+      "state": "UNKNOWN"
+    },
+    {
+      "id": "clarity_act",
+      "state": "UNKNOWN"
+    },
+    {
+      "id": "hr8957",
+      "state": "UNKNOWN"
+    },
+    {
+      "id": "gold_revaluation",
+      "state": "UNKNOWN"
+    },
+    {
+      "id": "hard_asset_backing",
+      "state": "UNKNOWN"
+    }
+  ],
+  "weight_rules": [
+    {
+      "id": "oat_gt_90",
+      "fired": true
+    },
+    {
+      "id": "oat_gt_130",
+      "fired": true
+    },
+    {
+      "id": "gold_dxy_together",
+      "fired": false
+    },
+    {
+      "id": "g7_auction_fail",
+      "fired": null
+    },
+    {
+      "id": "dedollar_official",
+      "fired": null
+    },
+    {
+      "id": "recap_policy_advance",
+      "fired": null
+    }
+  ],
+  "scenario_weights": null,
+  "weight_status": "not_calculated_missing_registered_shift_map",
+  "weight_note": "No starting weights or registered shift magnitudes were present in the supplied code excerpt; no shifts are applied.",
+  "events": [],
+  "events_as_of": null,
+  "sources": [
+    "https://api.coinbase.com/v2/prices/BTC-USD/spot",
+    "https://api.gold-api.com/price/XAG",
+    "https://api.gold-api.com/price/XAU",
+    "https://finance.yahoo.com/quote/DX-Y.NYB/",
+    "https://finance.yahoo.com/quote/GC=F/",
+    "https://fiscaldata.treasury.gov/datasets/debt-to-the-penny/",
+    "https://home.treasury.gov/resource-center/data-chart-center/interest-rates",
+    "https://stablecoins.llama.fi/stablecoins?includePrices=false",
+    "https://www.eia.gov/dnav/pet/pet_pri_spt_s1_d.htm",
+    "https://www.ideal-investisseur.fr/en/markets/oat-bund-spread.html"
+  ],
+  "source_errors": []
+}

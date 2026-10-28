@@ -3,55 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Robert Foley — EDI, Systems, and Research</title>
-  <meta name="description" content="A working portfolio of EDI, automation, and research experiments—with reported results kept separate from plans and targets.">
+  <title>Field Notes — Systems, Research, and Macro</title>
+  <meta name="description" content="A pseudonymous project log for software, research experiments, and a source-linked macro thesis scoreboard.">
+  <meta name="theme-color" content="#0a0a0a">
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-<nav>
-  <div class="container" style="max-width:1100px">
-    <div class="logo">robert<span>foley</span></div>
+<nav aria-label="Main navigation">
+  <div class="container nav-container">
+    <a class="logo" href="#top" aria-label="Field Notes home">field<span>notes</span></a>
     <div class="nav-links">
-      <a href="#about">Bio</a>
-      <a href="#projects">Work</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
       <a href="#research">Research</a>
       <a href="#macro">Macro</a>
-      <a href="#blog">Blog</a>
+      <a href="#blog">Notes</a>
     </div>
   </div>
 </nav>
 
-<header class="hero">
+<header class="hero" id="top">
   <div class="container">
+    <p class="eyebrow">Projects · Research · Evidence</p>
     <h1>Build it. <span class="highlight">Measure it.</span> Say what happened.</h1>
     <p class="subtitle">
-      I work on EDI and supply-chain systems, automation, and technical research. This is a record of projects and experiments, with plans, probes, and verified results labeled separately.
+      A pseudonymous log of software projects, experiments, and macro hypotheses. Reported results are kept separate from plans, probes, and unverified claims.
     </p>
-    <div class="stats">
-      <div class="stat">
-        <div class="number green">15+</div>
-        <div class="label">Years in EDI &amp; supply chain</div>
-      </div>
-      <div class="stat">
-        <div class="number yellow">2</div>
-        <div class="label">Research notes with results pending</div>
-      </div>
-    </div>
   </div>
 </header>
 
 <section id="about">
   <div class="container">
-    <div class="section-label">About</div>
-    <h2 class="section-title">Operations first. Evidence always.</h2>
+    <div class="section-label">About this log</div>
+    <h2 class="section-title">Useful systems. Clear status.</h2>
     <p class="section-desc">
-      I have spent my career close to the unglamorous parts of business systems: documents, integrations, order flow, and the exceptions that fall between them. Lately I have been exploring where software and AI can make that work easier to inspect and improve.
+      Project notes focus on what can be checked: what exists, what was tested, and what remains unresolved.
     </p>
     <p>
-      I share what I can verify and call out what I cannot. Some work is internal, so public project summaries leave out employer, customer, and partner details.
+      Some work involves private or employer-owned systems. Those details are intentionally left out; the public summaries avoid customer, partner, and workplace identifiers.
     </p>
   </div>
 </section>
@@ -59,88 +51,36 @@
 <section id="projects">
   <div class="wide-container">
     <div class="section-label">Selected work</div>
-    <h2 class="section-title">Projects, prototypes, and open questions</h2>
+    <h2 class="section-title">Projects and prototypes</h2>
     <p class="section-desc">
-      A project card is not a performance claim. Where an outcome has not been measured or independently checked, it is described as a goal or an experiment.
+      A project card is not a performance claim. Outcomes without a dated, reviewable record are described as experiments or goals.
     </p>
 
     <div class="project-grid">
       <article class="project-card">
         <div class="card-header">
-          <h3>FirstPass EDI</h3>
-          <span class="status building">Early stage</span>
+          <h3>Open-source security automation</h3>
+          <span class="status live">Active</span>
         </div>
-        <p class="desc">An EDI consulting effort focused on practical compliance and integration problems. I built the initial prospecting specification and generated leads. That is not a claim of booked clients, revenue, or automated outreach.</p>
+        <p class="desc">A multi-agent framework for authorized security testing and research. Its public project notes distinguish shipped features from experimental areas and roadmap work.</p>
+        <div class="tags">
+          <span class="tag">Security research</span>
+          <span class="tag">Agents</span>
+          <span class="tag">Open source</span>
+        </div>
+        <a href="https://github.com/curburenthusiasm/T3MP3ST" class="card-link" target="_blank" rel="noopener noreferrer">View public repository ↗</a>
+      </article>
+
+      <article class="project-card">
+        <div class="card-header">
+          <h3>X12 document validation</h3>
+          <span class="status building">Prototype</span>
+        </div>
+        <p class="desc">An experiment in checking advance-ship-notice documents against partner specifications before submission. The prototype includes structural checks and a human-review path; no customer or production result is claimed.</p>
         <div class="tags">
           <span class="tag">EDI</span>
           <span class="tag">X12</span>
-          <span class="tag">Prospecting</span>
-        </div>
-        <a href="https://firstpassedi.com" class="card-link" target="_blank" rel="noopener noreferrer">FirstPass EDI →</a>
-      </article>
-
-      <article class="project-card">
-        <div class="card-header">
-          <h3>EDI automation</h3>
-          <span class="status paused">Ongoing work</span>
-        </div>
-        <p class="desc">Experiments with document handling, integration monitoring, and operational workflows. Public descriptions omit employer, customer, and trading-partner identifiers; no company-wide impact claim is made here.</p>
-        <div class="tags">
-          <span class="tag">Integrations</span>
-          <span class="tag">Operations</span>
-          <span class="tag">Automation</span>
-        </div>
-      </article>
-
-      <article class="project-card">
-        <div class="card-header">
-          <h3>SageOrderAPI</h3>
-          <span class="status paused">Project summary</span>
-        </div>
-        <p class="desc">An API-layer project exploring how modern services can exchange data with Sage 100. This summary describes the project, not a claim about current production status or customer adoption.</p>
-        <div class="tags">
-          <span class="tag">API</span>
-          <span class="tag">Sage 100</span>
-          <span class="tag">Integration</span>
-        </div>
-      </article>
-
-      <article class="project-card">
-        <div class="card-header">
-          <h3>Remittance matching</h3>
-          <span class="status building">Experiment</span>
-        </div>
-        <p class="desc">A workflow experiment for matching incoming payments with open invoices. Reducing manual effort is the goal; no time-savings result is reported here.</p>
-        <div class="tags">
-          <span class="tag">Reconciliation</span>
-          <span class="tag">ERP</span>
-          <span class="tag">Prototype</span>
-        </div>
-      </article>
-
-      <article class="project-card">
-        <div class="card-header">
-          <h3>Revenue recovery</h3>
-          <span class="status building">Experiment</span>
-        </div>
-        <p class="desc">An exploration of finding and organizing evidence for chargeback disputes. No recovered amount, success rate, or customer result is claimed.</p>
-        <div class="tags">
-          <span class="tag">EDI</span>
-          <span class="tag">Evidence</span>
-          <span class="tag">Workflow</span>
-        </div>
-      </article>
-
-      <article class="project-card">
-        <div class="card-header">
-          <h3>Agent-assisted workflows</h3>
-          <span class="status paused">Exploration</span>
-        </div>
-        <p class="desc">Testing where specialized AI agents help with research, drafting, and analysis—and where a human approval boundary should remain. A completed run is not, by itself, proof of a correct outcome.</p>
-        <div class="tags">
-          <span class="tag">AI</span>
-          <span class="tag">Human review</span>
-          <span class="tag">Evaluation</span>
+          <span class="tag">Validation</span>
         </div>
       </article>
     </div>
@@ -150,9 +90,9 @@
 <section id="research">
   <div class="wide-container">
     <div class="section-label">Research</div>
-    <h2 class="section-title">Two open investigations</h2>
+    <h2 class="section-title">Open investigations</h2>
     <p class="section-desc">
-      These are status reports, not result announcements. Each page separates work completed so far from its proposed test and target.
+      These are status reports, not result announcements. Completed work, proposed tests, and targets are labeled separately.
     </p>
 
     <div class="project-grid">
@@ -170,7 +110,7 @@
           <h3>METABRIC survival modeling</h3>
           <span class="status building">Metrics pending</span>
         </div>
-        <p class="desc">The experimental runner and protocol exist; completed formal-run metrics are not available. The stated thresholds are targets, not achieved results. This is research, not a clinical tool.</p>
+        <p class="desc">The experimental runner and protocol exist; completed formal-run metrics are not available. Stated thresholds are targets, not achieved results. This is research, not a clinical tool.</p>
         <a href="blog/metabric-survival.html" class="card-link">Read the status note →</a>
       </article>
     </div>
@@ -178,18 +118,78 @@
 </section>
 
 <section id="macro">
-  <div class="container">
+  <div class="wide-container">
     <div class="section-label">Macro</div>
     <h2 class="section-title">Thesis Scoreboard</h2>
     <p class="section-desc">
-      The live scoreboard reads the latest saved market and policy readings from its data feed and applies its own fixed scenario rules. This page links to the source artifact rather than duplicating its calculations.
+      Refreshable market readings from public sources, with source dates shown per metric. Some feeds update intraday; official and daily series update only when their publishers release new data.
     </p>
-    <p>
-      Open the artifact to view the latest published reading. Refresh the artifact page to reload its current data; readings reflect closing or latest available values, not tick-by-tick prices.
+
+    <div class="scoreboard-toolbar">
+      <button id="scoreboard-refresh" class="refresh-button" type="button">Refresh latest data</button>
+      <p id="scoreboard-status" class="scoreboard-status" role="status" aria-live="polite">Showing the supplied baseline snapshot · 28 Sep 2026.</p>
+    </div>
+
+    <div class="metric-grid" id="macro-metrics" aria-label="Market and macro readings">
+      <article class="metric-card"><h3>US total debt</h3><p class="metric-value" id="metric-debt">$40.07T</p><p class="metric-meta" id="metric-meta-debt">Baseline · 28 Sep 2026</p><a class="source-link" id="source-debt" href="https://fiscaldata.treasury.gov/datasets/debt-to-the-penny/" target="_blank" rel="noopener noreferrer">Source ↗</a></article>
+      <article class="metric-card"><h3>10Y Treasury yield</h3><p class="metric-value" id="metric-us10y">~4.95%</p><p class="metric-meta" id="metric-meta-us10y">Baseline · 28 Sep 2026</p><a class="source-link" id="source-us10y" href="https://home.treasury.gov/resource-center/data-chart-center/interest-rates" target="_blank" rel="noopener noreferrer">Source ↗</a></article>
+      <article class="metric-card"><h3>OAT–Bund spread</h3><p class="metric-value" id="metric-oat">105bp</p><p class="metric-meta" id="metric-meta-oat">Baseline · 28 Sep 2026</p><a class="source-link" id="source-oat" href="https://www.ideal-investisseur.fr/en/markets/oat-bund-spread.html" target="_blank" rel="noopener noreferrer">Source ↗</a></article>
+      <article class="metric-card"><h3>Gold</h3><p class="metric-value" id="metric-gold">~$4,350</p><p class="metric-meta" id="metric-meta-gold">Baseline · 28 Sep 2026</p><a class="source-link" id="source-gold" href="https://api.gold-api.com/price/XAU" target="_blank" rel="noopener noreferrer">Source ↗</a></article>
+      <article class="metric-card"><h3>Silver</h3><p class="metric-value" id="metric-silver">+52% YoY</p><p class="metric-meta" id="metric-meta-silver">Baseline was year-over-year; live feed reports spot price.</p><a class="source-link" id="source-silver" href="https://api.gold-api.com/price/XAG" target="_blank" rel="noopener noreferrer">Source ↗</a></article>
+      <article class="metric-card"><h3>Bitcoin</h3><p class="metric-value" id="metric-btc">$77K</p><p class="metric-meta" id="metric-meta-btc">Baseline · 28 Sep 2026</p><a class="source-link" id="source-btc" href="https://api.coinbase.com/v2/prices/BTC-USD/spot" target="_blank" rel="noopener noreferrer">Source ↗</a></article>
+      <article class="metric-card"><h3>USD-pegged stablecoins</h3><p class="metric-value" id="metric-stable">$308B</p><p class="metric-meta" id="metric-meta-stable">Baseline · 28 Sep 2026</p><a class="source-link" id="source-stable" href="https://stablecoins.llama.fi/stablecoins?includePrices=false" target="_blank" rel="noopener noreferrer">Source ↗</a></article>
+      <article class="metric-card"><h3>Brent crude</h3><p class="metric-value" id="metric-brent">~$90</p><p class="metric-meta" id="metric-meta-brent">Baseline · 28 Sep 2026</p><a class="source-link" id="source-brent" href="https://www.eia.gov/dnav/pet/pet_pri_spt_s1_d.htm" target="_blank" rel="noopener noreferrer">Source ↗</a></article>
+      <article class="metric-card"><h3>DXY futures proxy</h3><p class="metric-value" id="metric-dxy">~99.7</p><p class="metric-meta" id="metric-meta-dxy">Baseline · 28 Sep 2026</p><a class="source-link" id="source-dxy" href="https://finance.yahoo.com/quote/DX-Y.NYB/" target="_blank" rel="noopener noreferrer">Source ↗</a></article>
+    </div>
+
+    <p class="data-caveat">
+      Baseline values above are the supplied 28 Sep 2026 snapshot, not current quotes. Silver's baseline is a year-over-year change; refreshed silver is a spot quote. A failed or unavailable source leaves its last verified reading in place and marks it stale.
     </p>
-    <p style="margin-top: 24px">
-      <a href="https://claude.ai/artifact/9wUoGqQxVNj94amc1HuSzF" class="card-link" target="_blank" rel="noopener noreferrer">Open live thesis scoreboard ↗</a>
-    </p>
+
+    <h3 class="subsection-title">Thesis ratings · supplied snapshot</h3>
+    <p class="section-desc compact-desc">These eight entries and their status/strength values come from the supplied 28 Sep 2026 code excerpt. Strength is not a probability. The excerpt is incomplete, so omitted theses are not inferred; refreshed market data does not rewrite these baseline judgments.</p>
+    <div class="thesis-grid" aria-label="Baseline thesis ratings">
+      <article class="thesis-card"><h4>Long sovereign paper = designated loser</h4><span class="thesis-status winning">WINNING · snapshot</span><strong>95 / 100</strong></article>
+      <article class="thesis-card"><h4>Hard-asset rotation</h4><span class="thesis-status winning">WINNING · snapshot</span><strong>90 / 100</strong></article>
+      <article class="thesis-card"><h4>Stablecoin → T-bill channel</h4><span class="thesis-status winning">WINNING · snapshot</span><strong>92 / 100</strong></article>
+      <article class="thesis-card"><h4>Europe capital exodus</h4><span class="thesis-status winning">WINNING · snapshot</span><strong>85 / 100</strong></article>
+      <article class="thesis-card"><h4>Weaponization → fragmentation</h4><span class="thesis-status winning">WINNING · snapshot</span><strong>82 / 100</strong></article>
+      <article class="thesis-card"><h4>US capital-friction rising</h4><span class="thesis-status winning">WINNING · snapshot</span><strong>60 / 100</strong></article>
+      <article class="thesis-card"><h4>Milkshake vs. de-dollarization</h4><span class="thesis-status contested">CONTESTED · snapshot</span><strong>55 / 100</strong></article>
+      <article class="thesis-card"><h4>AI pop vs. AGI buildout</h4><span class="thesis-status contested">CONTESTED · snapshot</span><strong>50 / 100</strong></article>
+    </div>
+
+    <h3 class="subsection-title">Rule status</h3>
+    <p class="section-desc compact-desc">A rule is marked fired only when its required input is verified. Missing evidence is shown as unknown, never as false. The gold/dollar trend uses COMEX gold and ICE dollar-index continuous-contract closes as proxies; it is not a spot-index calculation.</p>
+    <div class="signal-grid" id="signal-grid">
+      <article class="signal-card"><h4>OAT–Bund &gt; 90bp</h4><p id="rule-oat90" class="signal-state">Baseline: fired at 105bp · 28 Sep 2026</p></article>
+      <article class="signal-card"><h4>OAT–Bund &gt; 130bp</h4><p id="rule-oat130" class="signal-state">Baseline: not fired at 105bp · 28 Sep 2026</p></article>
+      <article class="signal-card"><h4>Gold + dollar together</h4><p id="rule-golddxy" class="signal-state">Baseline: not sustained · 28 Sep 2026</p><p class="signal-method">Refresh rule: both daily futures proxies must close above their aligned values from 10 sessions earlier for 3 consecutive closes.</p></article>
+      <article class="signal-card"><h4>G7 auction failure</h4><p id="rule-auction" class="signal-state">Unknown · not verified by the supplied excerpt</p></article>
+      <article class="signal-card"><h4>Official de-dollarization</h4><p id="rule-dedollar" class="signal-state">Unknown · not verified by the supplied excerpt</p></article>
+      <article class="signal-card"><h4>Recapitalization-policy advance</h4><p id="rule-recap" class="signal-state">Unknown · not verified by the supplied excerpt</p></article>
+    </div>
+
+    <div class="weight-note" id="weight-note">
+      <strong>Scenario weights are not being changed.</strong> The supplied code excerpt names the rules but does not include starting weights or the registered shift sizes. This board will not invent a scoring formula.
+    </div>
+
+    <h3 class="subsection-title">Policy trigger states</h3>
+    <p class="section-desc compact-desc">States stay unverified until a current source is checked.</p>
+    <div class="trigger-grid" id="trigger-grid">
+      <div class="trigger-card"><span>GENIUS final rules</span><strong>Unverified</strong></div>
+      <div class="trigger-card"><span>GENIUS effective</span><strong>Unverified</strong></div>
+      <div class="trigger-card"><span>Issuer approvals</span><strong>Unverified</strong></div>
+      <div class="trigger-card"><span>Bitcoin reserve</span><strong>Unverified</strong></div>
+      <div class="trigger-card"><span>BTC budget-neutral</span><strong>Unverified</strong></div>
+      <div class="trigger-card"><span>CLARITY Act</span><strong>Unverified</strong></div>
+      <div class="trigger-card"><span>H.R. 8957</span><strong>Unverified</strong></div>
+      <div class="trigger-card"><span>Gold revaluation</span><strong>Unverified</strong></div>
+      <div class="trigger-card"><span>Hard-asset backing</span><strong>Unverified</strong></div>
+    </div>
+
+    <h3 class="subsection-title">Notable events</h3>
+    <p class="section-desc compact-desc" id="macro-events">No verified event feed is connected. No headlines or policy developments are being inferred.</p>
   </div>
 </section>
 
@@ -197,55 +197,32 @@
   <div class="container">
     <div class="section-label">Writing</div>
     <h2 class="section-title">Notes from the work</h2>
-    <p class="section-desc">
-      What was tried, what the evidence supports, and what is still an open question.
-    </p>
-
+    <p class="section-desc">What was tested, what the evidence supports, and what remains an open question.</p>
     <div class="blog-list">
       <a href="blog/hutton-cipher.html" class="blog-item">
-        <div class="date">October 27, 2026 · Research status</div>
+        <div class="date">Research status · October 27, 2026</div>
         <h3>Hutton Cipher: What Has—and Hasn't—Been Verified</h3>
         <p class="excerpt">A reproduced test vector is a useful check, not a solution to MysteryTwister Part 5.</p>
       </a>
       <a href="blog/metabric-survival.html" class="blog-item">
-        <div class="date">October 27, 2026 · Research status</div>
+        <div class="date">Research status · October 27, 2026</div>
         <h3>METABRIC Survival Modeling: Protocol Before Results</h3>
-        <p class="excerpt">The runner and evaluation protocol are in place; the formal metrics remain pending.</p>
+        <p class="excerpt">The runner and evaluation protocol are in place; formal metrics remain pending.</p>
       </a>
       <a href="blog/systems-and-autonomy.html" class="blog-item">
-        <div class="date">October 27, 2026 · Essay</div>
+        <div class="date">Essay · October 27, 2026</div>
         <h3>Automation Is Not Evidence</h3>
-        <p class="excerpt">A job can finish, a dashboard can look green, and the underlying result can still be wrong—or missing.</p>
+        <p class="excerpt">Execution, fresh inputs, and correct outcomes are separate claims.</p>
       </a>
-      <a href="blog/origin-story.html" class="blog-item">
-        <div class="date">October 16, 2026 · Updated October 27, 2026</div>
-        <h3>I've Been Living Someone Else's Plan. Here's the Exit I'm Building.</h3>
-        <p class="excerpt">A dated personal snapshot, with a correction: the income components in the original post do not add up to its stated total.</p>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section id="connect">
-  <div class="container">
-    <div class="section-label">Connect</div>
-    <h2 class="section-title">Find me</h2>
-    <p class="section-desc">
-      For EDI consulting inquiries, use FirstPass EDI. For project notes and code, start with GitHub.
-    </p>
-    <div class="connect-grid">
-      <a href="https://firstpassedi.com" target="_blank" rel="noopener noreferrer" class="connect-btn">FirstPass EDI</a>
-      <a href="https://github.com/curburenthusiasm" target="_blank" rel="noopener noreferrer" class="connect-btn">GitHub</a>
-      <a href="https://x.com/Stackemup80085" target="_blank" rel="noopener noreferrer" class="connect-btn">X</a>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="container">
-    <p>Robert Foley · Building and testing useful systems.</p>
+    <p>Pseudonymous project notes · Claims are labeled by evidence and date.</p>
   </div>
 </footer>
-
+<script src="js/scoreboard.js" defer></script>
 </body>
 </html>
