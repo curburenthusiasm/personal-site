@@ -122,12 +122,12 @@
     <div class="section-label">Macro</div>
     <h2 class="section-title">Thesis Scoreboard</h2>
     <p class="section-desc">
-      Refreshable market readings from public sources, with source dates shown per metric. Some feeds update intraday; official and daily series update only when their publishers release new data.
+      Browser refresh checks six public feeds and repeats every 15 minutes while this page is visible; a manual refresh also tries the EIA Brent feed, which uses a shared rate-limited demo endpoint. Spot prices are indicative, and official daily series follow publisher release times. OAT–Bund and DXY remain dated published readings because their current sources block direct browser refresh. Signals and policy triggers are dated evidence snapshots, not a live news scan; unknown means unverified.
     </p>
 
     <div class="scoreboard-toolbar">
       <button id="scoreboard-refresh" class="refresh-button" type="button">Refresh latest data</button>
-      <p id="scoreboard-status" class="scoreboard-status" role="status" aria-live="polite">Showing the supplied baseline snapshot · 28 Sep 2026.</p>
+      <p id="scoreboard-status" class="scoreboard-status" role="status" aria-live="polite">Connecting to public data feeds and loading dated evidence…</p>
     </div>
 
     <div class="metric-grid" id="macro-metrics" aria-label="Market and macro readings">
