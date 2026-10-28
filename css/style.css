@@ -191,8 +191,15 @@ footer {
   .hero h1 { font-size: 32px; }
   .hero .stats { gap: 32px; }
   .stat .number { font-size: 28px; }
-  .project-grid { grid-template-columns: 1fr; }
+  .project-grid { grid-template-columns: minmax(0, 1fr); }
+  .project-card { min-width: 0; }
   .section-title { font-size: 26px; }
-  nav .nav-links { gap: 16px; }
+  nav .container { flex-wrap: wrap; justify-content: flex-start; gap: 12px 24px; }
+  nav .nav-links { flex-wrap: wrap; gap: 8px 16px; }
   nav .nav-links a { font-size: 12px; }
+}
+
+@media (max-width: 360px) {
+  .project-card { padding: 20px; }
+  .project-card .card-header { flex-direction: column; gap: 8px; }
 }
