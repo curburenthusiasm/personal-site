@@ -1,0 +1,41 @@
+name: Refresh macro scoreboard data
+
+on:
+  schedule:
+    - cron: "30 17 * * 1-5"
+      timezone: "America/New_York"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: macro-scoreboard-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out default branch
+        uses: actions/checkout@v4
+        with:
+          ref: master
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Fetch latest public readings
+        run: python scripts/refresh_scoreboard.py
+      - name: Publish changed readings to the data feed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/scoreboard.json data/readings/
+          if git diff --cached --quiet; then
+            echo "No scoreboard data changed."
+            exit 0
+          fi
+          git commit -m "chore(macro): refresh scoreboard data"
+          git push origin HEAD:master
