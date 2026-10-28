@@ -120,6 +120,7 @@ section:last-child { border-bottom: none; }
 }
 .status.live { background: var(--accent-dim); color: var(--accent); }
 .status.building { background: #433511; color: var(--yellow); }
+.status.complete { background: #152c33; color: #67d5e8; }
 .status.killed { background: #3b1818; color: var(--red); }
 .status.paused { background: #1a1a2e; color: #818cf8; }
 .project-card .desc { color: var(--text-muted); font-size: 15px; margin-bottom: 16px; }
@@ -224,6 +225,29 @@ nav .logo span { color: var(--accent); }
 .refresh-button:hover { background: #18321f; }
 .refresh-button:disabled { opacity: .65; cursor: progress; }
 .scoreboard-status { color: var(--text-muted); font-size: 13px; margin: 0; }
+.sports-feed {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+.sports-feed-card {
+  min-width: 0; background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 11px; padding: 20px;
+}
+.sports-feed-header {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  gap: 12px; margin-bottom: 14px;
+}
+.sports-feed-header h3 { font-size: 17px; }
+.sports-feed-date { color: var(--text-muted); font: 12px var(--font-mono); text-align: right; }
+.sports-feed-stale { color: var(--yellow); font-size: 11px; margin: -6px 0 12px; }
+.pick-list { display: grid; gap: 10px; }
+.pick-item {
+  min-width: 0; padding: 12px 13px; border: 1px solid var(--border);
+  border-radius: 8px; background: #101010;
+}
+.pick-selection { display: block; overflow-wrap: anywhere; font-weight: 700; }
+.pick-details { display: flex; flex-wrap: wrap; gap: 5px 12px; margin-top: 5px; color: var(--text-muted); font-size: 12px; }
+.feed-empty { grid-column: 1 / -1; padding: 20px; color: var(--text-muted); background: var(--bg-card); border: 1px solid var(--border); border-radius: 11px; }
 .metric-grid {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
   gap: 14px;
@@ -278,6 +302,9 @@ nav .logo span { color: var(--accent); }
 
 @media (max-width: 640px) {
   .scoreboard-toolbar { align-items: flex-start; }
+  .sports-feed { grid-template-columns: minmax(0, 1fr); }
+  .sports-feed-header { flex-direction: column; }
+  .sports-feed-date { text-align: left; }
   .metric-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .metric-card { padding: 15px; }
   .metric-value { font-size: 20px; }
