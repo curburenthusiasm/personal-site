@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 560" role="img" aria-labelledby="title desc">
+  <title id="title">Governed order-to-cash EDI workflow</title>
+  <desc id="desc">Trading partner documents flow through an EDI network and orchestrator into a persistent state machine and ERP. Agents observe workflow state. A Judge records failure lessons that inform future agent context.</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 10 5 0 10z" fill="#086b58"/></marker></defs>
+  <rect width="1120" height="560" rx="18" fill="#f4f3ee"/>
+  <g font-family="ui-monospace, monospace" text-anchor="middle" fill="#182522">
+    <g font-size="16" font-weight="700">
+      <rect x="30" y="210" width="165" height="72" rx="10" fill="#fffefa" stroke="#aeb9b1"/><text x="112" y="242">Trading partner</text><text x="112" y="264" font-size="12">X12 documents</text>
+      <rect x="245" y="210" width="150" height="72" rx="10" fill="#fffefa" stroke="#aeb9b1"/><text x="320" y="242">EDI network</text><text x="320" y="264" font-size="12">850 · 997 · 855 · 856 · 810</text>
+      <rect x="445" y="210" width="150" height="72" rx="10" fill="#fffefa" stroke="#aeb9b1"/><text x="520" y="242">Orchestrator</text><text x="520" y="264" font-size="12">idempotent sync</text>
+      <rect x="650" y="200" width="205" height="92" rx="12" fill="#d9eee6" stroke="#086b58" stroke-width="2"/><text x="752" y="238">Persistent state</text><text x="752" y="262">machine + events</text>
+      <rect x="920" y="210" width="165" height="72" rx="10" fill="#fffefa" stroke="#aeb9b1"/><text x="1002" y="242">ERP</text><text x="1002" y="264" font-size="12">read + write</text>
+    </g>
+    <g stroke="#086b58" stroke-width="3" fill="none" marker-end="url(#arrow)"><path d="M195 246h44"/><path d="M395 246h44"/><path d="M595 246h50"/><path d="M855 246h60"/></g>
+    <rect x="665" y="60" width="175" height="72" rx="10" fill="#e5eef5" stroke="#317ba0"/><text x="752" y="91" font-size="16" font-weight="700">Worker agents</text><text x="752" y="114" font-size="12">monitor · classify · act</text>
+    <path d="M752 132v59" stroke="#317ba0" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+    <rect x="690" y="375" width="125" height="64" rx="10" fill="#eee9f7" stroke="#635293"/><text x="752" y="403" font-size="16" font-weight="700">Judge</text><text x="752" y="424" font-size="12">scores decisions</text>
+    <rect x="875" y="375" width="175" height="64" rx="10" fill="#fffefa" stroke="#aeb9b1"/><text x="962" y="403" font-size="16" font-weight="700">failure_lessons</text><text x="962" y="424" font-size="12">structured record</text>
+    <g stroke="#635293" stroke-width="2" fill="none" marker-end="url(#arrow)"><path d="M752 292v77"/><path d="M815 407h54"/><path d="M962 375V96H849" stroke-dasharray="6 5"/></g>
+    <text x="560" y="510" font-size="13" fill="#58655f">Observable state · repeat-safe writes · failures become reviewable data</text>
+  </g>
+</svg>

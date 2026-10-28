@@ -1,0 +1,26 @@
+---
+import { getCollection, render } from 'astro:content';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+
+export async function getStaticPaths() {
+  const notes = await getCollection('notes');
+  return notes.map((note) => ({ params: { slug: note.data.slug }, props: { note } }));
+}
+
+const { note } = Astro.props;
+const { Content } = await render(note);
+const base = import.meta.env.BASE_URL;
+---
+<SiteLayout title={note.data.title} description={note.data.description}>
+  <article class="case-study container">
+    <header class="project-head">
+      <p class="section-kicker">ST*31 · {note.data.category}</p>
+      {note.data.draft && <p class="draft-banner">DRAFT · excluded from public listings and RSS until reviewed</p>}
+      <h1>{note.data.title}</h1>
+      <p class="date-line">{note.data.pubDate.toLocaleDateString('en', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}</p>
+      <p class="project-summary">{note.data.description}</p>
+    </header>
+    <div class="prose"><Content /></div>
+    <p class="link-row"><a class="text-link" href={`${base}notes/`}>← All notes</a><a class="text-link" href={`${base}rss.xml`}>RSS feed ↗</a></p>
+  </article>
+</SiteLayout>

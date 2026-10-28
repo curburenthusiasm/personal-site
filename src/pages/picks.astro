@@ -1,0 +1,14 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import PicksFeed from '../components/PicksFeed.astro';
+---
+<SiteLayout title="Sports picks feed" description="Selected free-channel sports pick outputs, refreshed from the published bot feed.">
+  <div class="wide-container">
+    <header class="page-title">
+      <p class="section-kicker">ST*70 · Live output</p>
+      <h1>Sports picks</h1>
+      <p>Selected free-channel outputs are published to this feed after the corresponding Discord post succeeds. Bot-reported scores are not calibrated probabilities or performance claims.</p>
+    </header>
+  </div>
+  <PicksFeed />
+</SiteLayout>

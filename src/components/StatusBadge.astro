@@ -1,0 +1,11 @@
+---
+const labels = {
+  production: 'Production',
+  prototype: 'Prototype',
+  research: 'Research',
+  concept: 'Concept',
+  'in-progress': 'In progress',
+};
+const { status } = Astro.props;
+---
+<span class={`status-chip status-${status}`}>{labels[status] ?? status}</span>

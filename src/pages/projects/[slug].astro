@@ -1,0 +1,43 @@
+---
+import { getCollection, render } from 'astro:content';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import StatusBadge from '../../components/StatusBadge.astro';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({ params: { slug: project.data.slug }, props: { project } }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+const base = import.meta.env.BASE_URL;
+const diagrams = {
+  'agentic-order-to-cash': ['order-to-cash.svg', 'Diagram of a governed order-to-cash EDI pipeline with agents, a state machine, ERP integration, and a Judge feedback loop.'],
+  'deadbolt-transmission-records': ['deadbolt-custody.svg', 'Diagram of a document hash and custody record anchored to a public timechain and independently verifiable.'],
+  'data-governance-gates': ['data-governance.svg', 'Diagram of a rule table flowing through a resolved view to reports, with an application reading the view and editing rules.'],
+};
+const diagram = diagrams[project.data.slug];
+---
+<SiteLayout title={project.data.title} description={project.data.summary}>
+  <article class="case-study wide-container">
+    <header class="project-head">
+      <p class="section-kicker">ST*20 · Case study</p>
+      <StatusBadge status={project.data.status} />
+      <h1>{project.data.title}</h1>
+      <p class="project-summary">{project.data.summary}</p>
+      <div class="project-meta">
+        <span>Order {String(project.data.order).padStart(2, '0')}</span>
+        <div class="tag-list">{project.data.tags.map((tag) => <span class="tag">{tag}</span>)}</div>
+      </div>
+      {project.data.repoUrl && <p><a class="repo-link" href={project.data.repoUrl} target="_blank" rel="noopener noreferrer">Source repository ↗</a></p>}
+    </header>
+    {diagram && <figure class="diagram"><img src={`${base}diagrams/${diagram[0]}`} alt={diagram[1]} loading="lazy" /><figcaption class="date-line">System sketch · no customer, employer, or host identifiers</figcaption></figure>}
+    <div class="prose"><Content /></div>
+    <section aria-labelledby="stack-heading">
+      <h2 id="stack-heading">Stack</h2>
+      <div class="stack-list">{project.data.stack.map((item) => <span class="stack-item">{item}</span>)}</div>
+    </section>
+    {project.data.slug === 'failure-mode-research-infrastructure' && <p class="data-caveat">Research methodology only. Not investment advice.</p>}
+    <p class="link-row"><a class="text-link" href={`${base}projects/`}>← All projects</a><a class="text-link" href={`${base}contact/`}>Contact →</a></p>
+  </article>
+</SiteLayout>

@@ -1,0 +1,31 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+<SiteLayout title="About" description="Background, focus areas, and design principles for an anonymous engineering portfolio.">
+  <div class="container">
+    <header class="page-title">
+      <p class="section-kicker">ST*40 · About</p>
+      <h1>Build systems that can explain themselves.</h1>
+      <p>IT and automation leadership across agentic systems, X12 EDI, ERP integration, infrastructure, and security—with a bias toward falsifiable, auditable design.</p>
+    </header>
+    <section class="page-section">
+      <h2 class="section-heading">Focus areas</h2>
+      <div class="principle-grid">
+        <article class="principle"><h3>Agentic automation</h3><p>Stateful workflows, explicit evaluation, and guarded write actions.</p></article>
+        <article class="principle"><h3>Operational data</h3><p>EDI and ERP flows with traceable transformations and repeat-safe processing.</p></article>
+        <article class="principle"><h3>Security and evidence</h3><p>Failure-first threat modeling, tamper-evident records, and reproducible verification.</p></article>
+        <article class="principle"><h3>Research infrastructure</h3><p>Pre-registration, known-answer gates, and honest separation of targets from results.</p></article>
+      </div>
+    </section>
+    <section class="page-section">
+      <h2 class="section-heading">Toolbox</h2>
+      <p class="section-desc">Examples drawn from the work described here; not every tool appears in every project.</p>
+      <div class="stack-list">
+        {['Python', 'TypeScript', 'X12 EDI', 'SQL Server', 'Sage 100', 'Supabase', 'Tray.io', 'Power Apps', 'Proxmox', 'Ceph', 'OpenTimestamps', 'MCP'].map((tool) => <span class="stack-item">{tool}</span>)}
+      </div>
+      <p class="data-caveat">This portfolio intentionally omits personal identity, employer, customer, and partner details. Private implementation specifics stay private.</p>
+    </section>
+    <p class="link-row"><a class="text-link" href={`${base}projects/`}>Browse case studies →</a><a class="text-link" href={`${base}contact/`}>Contact →</a></p>
+  </div>
+</SiteLayout>
